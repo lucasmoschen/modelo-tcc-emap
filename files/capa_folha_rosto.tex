@@ -1,0 +1,57 @@
+%--------------------------------------------------------------------------
+%---------------------- Capa e Folha de Rosto -----------------------------
+%--------------------------------------------------------------------------
+
+\renewcommand{\imprimircapa}{%
+	\begin{capa}%
+	\center
+		\ABNTEXchapterfont\Large \MakeUppercase{\imprimirinstituicao}
+		\\\vspace*{4cm}
+		{\ABNTEXchapterfont\large \MakeUppercase{\imprimirautor}}
+		\vfill
+		\begin{center}
+		\ABNTEXchapterfont\bfseries\large\MakeUppercase{\imprimirtitulo}
+		\end{center}
+		\vfill
+		\normalfont\large\imprimirlocal
+		\\\normalfont\large\imprimirdata
+		\vspace*{1cm}
+	\end{capa}
+}
+
+\makeatletter
+\renewcommand{\folhaderostocontent}{
+  \begin{center}
+
+    %\vspace*{1cm}
+    {\ABNTEXchapterfont\large\MakeUppercase{\imprimirautor}}
+	
+    \vspace*{\fill}\vspace*{\fill}
+    \begin{center}
+      \ABNTEXchapterfont\bfseries\large\MakeUppercase{\imprimirtitulo}
+    \end{center}
+    \vspace*{\fill}
+	
+    \abntex@ifnotempty{\imprimirpreambulo}{%
+      \hspace{.45\textwidth}
+      \begin{minipage}{.5\textwidth}
+      	\SingleSpacing
+         \imprimirpreambulo
+       \end{minipage}%
+       \vspace*{\fill}
+    }%
+
+    % {\large\imprimirorientadorRotulo~\imprimirorientador\par}
+    % \abntex@ifnotempty{\imprimircoorientador}{%
+    %    {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
+    % }%
+    \vspace*{\fill}
+
+    {\large\imprimirlocal}
+    \par
+    {\large\imprimirdata}
+    \vspace*{1cm}
+
+  \end{center}
+}
+\makeatother
