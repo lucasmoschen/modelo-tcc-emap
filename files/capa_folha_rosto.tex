@@ -1,6 +1,9 @@
-%--------------------------------------------------------------------------
-%---------------------- Capa e Folha de Rosto -----------------------------
-%--------------------------------------------------------------------------
+%----------------------------------------
+%------- Capa e Folha de Rosto ----------
+%----------------------------------------
+
+\newcommand{\subtitulo}[1]{\title{#1}}
+\newcommand{\imprimirsubtitulo}{\thetitle}
 
 \renewcommand{\imprimircapa}{%
 	\begin{capa}%
@@ -10,7 +13,8 @@
 		{\ABNTEXchapterfont\large \MakeUppercase{\imprimirautor}}
 		\vfill
 		\begin{center}
-		\ABNTEXchapterfont\bfseries\large\MakeUppercase{\imprimirtitulo}
+		\ABNTEXchapterfont\large\MakeUppercase{\imprimirtitulo}\normalfont\MakeUppercase{:
+		\imprimirsubtitulo}
 		\end{center}
 		\vfill
 		\normalfont\large\imprimirlocal
@@ -28,15 +32,18 @@
 	
     \vspace*{\fill}\vspace*{\fill}
     \begin{center}
-      \ABNTEXchapterfont\bfseries\large\MakeUppercase{\imprimirtitulo}
+      \ABNTEXchapterfont\bfseries\large\MakeUppercase{\imprimirtitulo}\normalfont\MakeUppercase{:
+      \imprimirsubtitulo}
     \end{center}
     \vspace*{\fill}
 	
     \abntex@ifnotempty{\imprimirpreambulo}{%
-      \hspace{.45\textwidth}
+      \hspace{7.5cm}
       \begin{minipage}{.5\textwidth}
       	\SingleSpacing
          \imprimirpreambulo
+         \\\\
+         Orientador: \imprimirorientador
        \end{minipage}%
        \vspace*{\fill}
     }%

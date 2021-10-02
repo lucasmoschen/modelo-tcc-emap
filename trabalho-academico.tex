@@ -44,7 +44,6 @@
 
 \renewcommand{\ABNTEXchapterfont}{\fontfamily{ptm}\fontseries{b}\selectfont}
 
-
 % Gráficos 
 \usepackage{color}
 \usepackage{caption}
@@ -60,8 +59,10 @@
 
 
 % Citações 
-\usepackage[english,hyperpageref]{backref}
-\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+%\usepackage[brazilian,hyperpageref]{backref}
+%\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+\usepackage[style=abnt]{biblatex}
+\addbibresource{biblio.bib}  
 
 % \renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
 % % Texto padrão antes do número das páginas
@@ -86,18 +87,22 @@
 \instituicao{%
   Fundação Getulio Vargas \\
   \par
-  School of Applied Mathematics
+  Escola de Matemática Aplicada
 }
-\tipotrabalho{Bachelor Dissertation (Graduation)}
+\tipotrabalho{Trabalho de Conclusão de Curso}
 
-\preambulo{Bachelor dissertation presented to the School of Applied
-Mathematics (FGV/EMAp). \\ \\ Study area: MINHA AREA DE ESTUDO. \\\\
-Advisor: PROFESSOR}
+\preambulo{Trabalho de conclusão de curso apresentada para a Escola de
+Matemática Aplicada (FGV/EMAp) como requisito para o grau de bacharel em
+Matemática Aplicada. \\ \\ Área de estudo: area de estudo.}
 
-\orientador{PROFESSOR}
+\orientador{Orientador}
 
-%-----------------------------___-------------
-%-------------------- PDF --__----------------
+% Se o seu texto tem subtítulo. 
+% Se não tiver, altere o arquivo capa_folha_rosto_tex
+\subtitulo{Este é o subtítulo do meu TCC}
+
+%---------------------------------------------
+%-------------------- PDF --------------------
 %---------------------------------------------
 
 % alterando o aspecto da cor azul
@@ -127,9 +132,9 @@ Advisor: PROFESSOR}
 \setlength{\@fptop}{5pt} % Set distance from top of page to first float
 \makeatother
 
-%--------------------------------------------------------
-%----------------- Mais configurações--------------------
-%--------------------------------------------------------
+%---------------------------------------
+%--------- Mais configurações-----------
+%---------------------------------------
 
 % Possibilita criação de Quadros e Lista de quadros.
 % Ver https://github.com/abntex/abntex2/issues/176
@@ -148,9 +153,9 @@ Advisor: PROFESSOR}
 
 \setfloatlocations{quadro}{hbtp} % Ver https://github.com/abntex/abntex2/issues/176
 
-%--------------------------------------------__-----------
-%-------- Espaçamentos entre linhas e parágrafos ---------
-%---------------------------------------------------------
+%-----------------------------------------------------
+%------ Espaçamentos entre linhas e parágrafos -------
+%-----------------------------------------------------
 
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
@@ -161,15 +166,15 @@ Advisor: PROFESSOR}
 % compila o índice
 \makeindex
 
-%--------------------------------------------------------------
-%----------- Personal Definitions -----------------------------
-%--------------------------------------------------------------
+%------------------------------------------------------
+%----------- Personal Definitions ---------------------
+%------------------------------------------------------
 
 \input{files/definitions.tex}
 
-%------------------------------------------------------_
-%----------------------- Document ----------------------
-%-------------------------------------------------------
+%-------------------------------------------------
+%----------------- Document ----------------------
+%-------------------------------------------------
 
 \begin{document}
 
@@ -177,12 +182,12 @@ Advisor: PROFESSOR}
 % if num != 1, do not print the pre textual 
 \setcounter{num}{1}
 
-\selectlanguage{english}
+\selectlanguage{brazil}
 \frenchspacing 
 
-%-------------------------------------------------------
-%--------------------- Pré-textuais --------------------
-%--------------------------------------------------------
+%----------------------------------------------
+%--------------- Pré-textuais -----------------
+%----------------------------------------------
 %\pretextual
 
 \imprimircapa
@@ -192,7 +197,7 @@ Advisor: PROFESSOR}
 
 \input{files/ficha_catalografica.tex}
 
-%\input{files/errata.tex}
+\input{files/errata.tex}
 
 \input{files/folha_aprovacao.tex}
 
@@ -238,16 +243,15 @@ Advisor: PROFESSOR}
 
 \input{files/conclusao.tex}
 
-% ----------------------------------------------------------
+% -----------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
-% ----------------------------------------------------------
+% -----------------------------------
 \postextual
-% ----------------------------------------------------------
----------------------------------------------------------
-\bibliography{biblio}
+% ----------------------------------
 
-% Consulte o manual da classe abntex2 para orientações sobre o glossário.
-%
+%\bibliography{biblio}
+\printbibliography
+
 %\glossary
 
 % ----------------------------------------------------------
