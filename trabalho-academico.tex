@@ -19,7 +19,7 @@
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
 	%openright,			% capítulos começam em página ímpar (insere página vazia caso preciso)
-	oneside,			% para impressão em recto e verso. Oposto a oneside
+	twoside,			% para impressão em recto e verso. Oposto a oneside
 	a4paper,			% tamanho do papel. 
 	% -- opções da classe abntex2 --
 	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
@@ -152,6 +152,14 @@ Matemática Aplicada. \\ \\ Área de estudo: area de estudo.}
 \renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
 
 \setfloatlocations{quadro}{hbtp} % Ver https://github.com/abntex/abntex2/issues/176
+
+%-----------------------------------------------------
+%--------------------- Margens -----------------------
+%-----------------------------------------------------
+
+\setlrmarginsandblock{3cm}{2cm}{*}
+\setulmarginsandblock{3cm}{2cm}{*}
+\checkandfixthelayout
 
 %-----------------------------------------------------
 %------ Espaçamentos entre linhas e parágrafos -------
