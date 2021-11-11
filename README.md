@@ -19,6 +19,10 @@ Almeida, Mercedes Ramos Silva Neta. Assim, os estudantes da Escola de
 Matemática Aplicada (EMAp) devem seguir o mais próximo possível deste manual. Por
 esse motivo, existe esse modelo de TCC para a EMAp. 
 
+## Contribuidores 
+
+[@FredsoNerd](https://github.com/FredsoNerd): See [#4](https://github.com/lucasmoschen/modelo-tcc-emap/issues/4).
+
 ## Como começar a usar? 
 
 - [Por onde começar?](https://github.com/abntex/abntex2/wiki/PorOndeComecar)
