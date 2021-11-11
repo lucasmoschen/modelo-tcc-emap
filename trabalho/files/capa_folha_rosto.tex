@@ -2,8 +2,8 @@
 %------- Capa e Folha de Rosto ----------
 %----------------------------------------
 
-\newcommand{\subtitulo}[1]{\title{#1}}
-\newcommand{\imprimirsubtitulo}{\thetitle}
+\newcommand\subtitulo[1]{\def\@subtitulo{#1}}
+\newcommand{\imprimirsubtitulo}{\@subtitulo}
 
 \renewcommand{\imprimircapa}{%
 	\begin{capa}%
