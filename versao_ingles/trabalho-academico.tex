@@ -28,7 +28,7 @@
 	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
 	% -- opções do pacote babel --
 	english,			% idioma para inglês
-	brazil				% idioma para português
+	%brazil				% idioma para português
 	]{abntex2}
 
 %------------------------------------------------
@@ -41,6 +41,7 @@
 \usepackage{lmodern}
 \usepackage{microtype} % para melhorias de justificação
 \usepackage{indentfirst}
+\usepackage{csquotes}
 
 \renewcommand{\ABNTEXchapterfont}{\fontfamily{ptm}\fontseries{b}\selectfont}
 
@@ -48,15 +49,21 @@
 \usepackage{color}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{multirow}
 \usepackage{graphicx}
+\usepackage{pdfpages}
 \graphicspath{{../../images/}}
 
 % Matemáticos 
+\usepackage{bbm}
 \usepackage{amsthm, amssymb, amsmath, mathtools}
 
 % Outros 
 \usepackage{lipsum}
-
+%\usepackage[textsize=tiny, textwidth=15mm]{todonotes}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{lstbayes}
 
 % Citações 
 %\usepackage[brazilian,hyperpageref]{backref}
@@ -80,26 +87,26 @@
 
 \input{files/capa_folha_rosto.tex}
 
-\titulo{Esse é o título do meu TCC}
-\autor{Este é meu nome}
+\titulo{This is my title}
+\autor{This is my name}
 \local{Rio de Janeiro}
 \data{2021}
 \instituicao{%
   Fundação Getulio Vargas \\
   \par
-  Escola de Matemática Aplicada
+  School of Applied Mathematics
 }
-\tipotrabalho{Trabalho de Conclusão de Curso}
+\tipotrabalho{Bachelor Dissertation (Undergraduation)}
 
-\preambulo{Trabalho de conclusão de curso apresentada para a Escola de
-Matemática Aplicada (FGV/EMAp) como requisito para o grau de bacharel em
-Matemática Aplicada. \\ \\ Área de estudo: area de estudo.}
+\preambulo{Bachelor dissertation presented to the School of Applied
+Mathematics (FGV/EMAp) to obtain the Bachelor's degree in Applied Mathematics.
+\\ \\ Area of Study: what?}
 
-\orientador{Orientador}
+\orientador{Professor}
 
 % Se o seu texto tem subtítulo. 
 % Se não tiver, altere o arquivo capa_folha_rosto_tex
-\subtitulo{Este é o subtítulo do meu TCC}
+\subtitulo{This is my subtitle}
 
 %---------------------------------------------
 %-------------------- PDF --------------------
@@ -157,7 +164,7 @@ Matemática Aplicada. \\ \\ Área de estudo: area de estudo.}
 %--------------------- Margens -----------------------
 %-----------------------------------------------------
 
-\setlrmarginsandblock{3cm}{2cm}{*}
+\setlrmarginsandblock{3cm}{2cm}{*} % The correct is 3/2
 \setulmarginsandblock{3cm}{2cm}{*}
 \checkandfixthelayout
 
@@ -180,6 +187,8 @@ Matemática Aplicada. \\ \\ Área de estudo: area de estudo.}
 
 \input{files/definitions.tex}
 
+\renewcommand{\quadroname}{Chart}
+
 %-------------------------------------------------
 %----------------- Document ----------------------
 %-------------------------------------------------
@@ -190,7 +199,7 @@ Matemática Aplicada. \\ \\ Área de estudo: area de estudo.}
 % if num != 1, do not print the pre textual 
 \setcounter{num}{1}
 
-\selectlanguage{brazil}
+\selectlanguage{english}
 \frenchspacing 
 
 %----------------------------------------------
@@ -205,7 +214,7 @@ Matemática Aplicada. \\ \\ Área de estudo: area de estudo.}
 
 \input{files/ficha_catalografica.tex}
 
-\input{files/errata.tex}
+%\input{files/errata.tex}
 
 \input{files/folha_aprovacao.tex}
 
@@ -266,16 +275,13 @@ Matemática Aplicada. \\ \\ Área de estudo: area de estudo.}
 % Apêndices
 % ----------------------------------------------------------
 
-% ---
-% Inicia os apêndices
-% ---
-% \begin{apendicesenv}
+\begin{apendicesenv}
 
-% % Imprime uma página indicando o início dos apêndices
-% \partapendices
+\partapendices
 
-% \end{apendicesenv}
-% ---
+\input{files/appendix.tex}
+
+\end{apendicesenv}
 
 % ----------------------------------------------------------
 % Anexos
@@ -286,7 +292,7 @@ Matemática Aplicada. \\ \\ Área de estudo: area de estudo.}
 % \partanexos
 
 % \end{anexosenv}
-"
+
 %---------------------------------------------------------------------
 % ÍNDICE REMISSIVO
 %---------------------------------------------------------------------
